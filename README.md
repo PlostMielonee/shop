@@ -17,8 +17,8 @@ Aby uruchomić aplikację, musisz mieć zainstalowane:
 
    >>
       * express – framework do tworzenia aplikacji webowych
-    mysql2 – biblioteka do połączenia z bazą danych MySQL
-   bcrypt – do haszowania haseł
-   jsonwebtoken – do obsługi tokenów JWT
-   cors – do obsługi polityki CORS
+      * mysql2 – biblioteka do połączenia z bazą danych MySQL
+      * bcrypt – do haszowania haseł
+      * jsonwebtoken – do obsługi tokenów JWT token jest zapisywany (np. w localStorage) i używany do uwierzytelniania przy każdym kolejnym żądaniu, np. podczas pobierania produktów.
+      * cors – do obsługi polityki CORS
    
