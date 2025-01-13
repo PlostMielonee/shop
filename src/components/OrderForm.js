@@ -4,7 +4,7 @@ function OrderForm({ products }) {
   const [order, setOrder] = useState([]);
 
   const handleOrder = () => {
-    fetch('/api/orders', {
+    fetch('http://localhost:3001/api/orders', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({

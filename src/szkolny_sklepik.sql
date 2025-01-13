@@ -27,4 +27,4 @@ CREATE TABLE orders (
 
 -- Dodaj przykładowego administratora
 INSERT INTO users (username, password, role) VALUES
-('admin', '$2b$10$your_hashed_password', 'admin'); -- Zastąp `$2b$...` zahashowanym hasłem.
+('admin', 'admin', 'admin'); 
