@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
-import './css/loginStyles.css';
 
 
 
@@ -35,6 +34,7 @@ const LoginForm = ({ setUser }) => {
       <h2>Zaloguj się</h2>
       <form onSubmit={handleSubmit}>
         <input
+        className='form-label'
           type="text"
           placeholder="Nazwa użytkownika"
           value={username}
@@ -42,6 +42,7 @@ const LoginForm = ({ setUser }) => {
           required
         />
         <input
+        className='form-label'
           type="password"
           placeholder="Hasło"
           value={password}

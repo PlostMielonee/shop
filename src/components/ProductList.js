@@ -16,20 +16,22 @@ function ProductList() {
 
   return (
     <div>
-      <h2>Produkty</h2>
-      {products.length === 0 ? (
-        <p>Brak produktów do wyświetlenia.</p>
-      ) : (
-        <ul>
-          {products.map((product) => (
-            <li key={product.id}>
-              {product.name} - {product.price} zł
-            </li>
-          ))}
-        </ul>
-      )}
-    </div>
-  );
+    <h2>Produkty</h2>
+    {products.length === 0 ? (
+      <p>Brak produktów do wyświetlenia.</p>
+    ) : (
+      <ul>
+        {products.map((product) => (
+          <li key={product.id}>
+            <h3>{product.name} - {product.price} zł</h3>
+            <p><strong>Typ jedzenia:</strong> {product.food_type}</p>
+            <p><strong>Opis:</strong> {product.description}</p>
+          </li>
+        ))}
+      </ul>
+    )}
+  </div>
+);
 }
 
 export default ProductList;
