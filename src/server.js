@@ -11,7 +11,7 @@ const db = mysql.createConnection({
   host: 'localhost',
   user: 'root',
   password: '',
-  database: 'szkolny_sklepik'
+  database: 'szkolny_sklepik',
 });
 
 db.connect(err => {
@@ -25,7 +25,7 @@ db.connect(err => {
 app.use(express.json());
 
 // Rejestracja
-app.post('http://localhost:3001/api/register', async (req, res) => {
+app.post('/api/register', async (req, res) => {
   const { username, password } = req.body;
 
   try {
@@ -38,24 +38,32 @@ app.post('http://localhost:3001/api/register', async (req, res) => {
 });
 
 // Logowanie
-app.post('http://localhost:3001/api/login', async (req, res) => {
+app.post('/api/login', async (req, res) => {
   const { username, password } = req.body;
 
-  const [users] = await db.promise().query('SELECT * FROM users WHERE username = ?', [username]);
-  const user = users[0];
+  try {
+    const [users] = await db.promise().query('SELECT * FROM users WHERE username = ?', [username]);
+    const user = users[0];
 
-  if (!user || !(await bcrypt.compare(password, user.password))) {
-    return res.status(401).json({ error: 'Nieprawidłowe dane logowania' });
+    if (!user || !(await bcrypt.compare(password, user.password))) {
+      return res.status(401).json({ error: 'Nieprawidłowe dane logowania' });
+    }
+
+    const token = jwt.sign({ id: user.id, role: user.role }, 'sekretny_klucz', { expiresIn: '1h' });
+    res.json({ token, role: user.role });
+  } catch (err) {
+    res.status(500).json({ error: 'Błąd serwera' });
   }
-
-  const token = jwt.sign({ id: user.id, role: user.role }, 'sekretny_klucz', { expiresIn: '1h' });
-  res.json({ token, role: user.role });
 });
 
 // Pobierz produkty
-app.get('http://localhost:3001/api/products', async (req, res) => {
-  const [products] = await db.promise().query('SELECT * FROM products');
-  res.json(products);
+app.get('/api/products', async (req, res) => {
+  try {
+    const [products] = await db.promise().query('SELECT * FROM products');
+    res.json(products);
+  } catch (err) {
+    res.status(500).json({ error: 'Błąd podczas pobierania produktów' });
+  }
 });
 
 app.listen(PORT, () => {

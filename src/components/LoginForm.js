@@ -6,7 +6,7 @@ function Login({ setUser }) {
 
   const handleSubmit = async e => {
     e.preventDefault();
-    const response = await fetch('/api/login', {
+    const response = await fetch('http://localhost:3001/api/login', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ username, password })
@@ -14,6 +14,7 @@ function Login({ setUser }) {
     const data = await response.json();
     if (data.token) {
       setUser({ username, token: data.token });
+      localStorage.setItem('userToken', data.token); // Przechowujemy token w localStorage
     } else {
       alert('Błąd logowania');
     }
