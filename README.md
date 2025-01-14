@@ -1,3 +1,5 @@
+by Oliwier Łosoń
+
 # Podczas pisania użyty został formatter kodu prietier
 
 # Instrukcja uruchomienia aplikacji
