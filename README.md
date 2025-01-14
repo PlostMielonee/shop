@@ -13,7 +13,7 @@ Aby uruchomić aplikację, musisz mieć zainstalowane:
 2. Przejdź do folderu, w którym znajduje się backend (plik `server.js`).
 3. Zainstaluj zależności, uruchamiając polecenie:
 
-   ``npm install express cors bcrypt mysql2 express``
+   ``npm install express cors bcrypt mysql2 react-router-dom``
 
    >>
       * express – framework do tworzenia aplikacji webowych
