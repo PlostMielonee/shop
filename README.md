@@ -87,3 +87,78 @@ Po kliknięciu przycisku "Zamów":
 - Jeśli koszyk jest pusty, wyświetlane jest powiadomienie że koszyk jest pusty,
 - Jeśli koszyk zawiera produktya zostanie coś kupione to zostaje  to zapisane  w historii zakupów, a koszyk zostaje opróżniony.
 
+# plik LoginForm.js
+
+## Cel
+Formularz logowania umożliwia użytkownikowi zalogowanie się do aplikacji. Po pomyślnym zalogowaniu użytkownik zostaje przekierowany do strony głównej aplikacji.
+
+## Składniki komponentu
+- **Stan (State)**:
+  - `username`: Przechowuje nazwę użytkownika wprowadzoną przez użytkownika.
+  - `password`: Przechowuje hasło wprowadzone przez użytkownika.
+
+- **Hooki**:
+  - `useState`: Służy do zarządzania stanem w aplikacji.
+  - `useNavigate`: Pozwala na programowe przekierowanie użytkownika do innej strony po zalogowaniu.
+
+## Logika
+1. **Obsługa formularza**:
+   - Formularz zawiera dwa pola wejściowe: jedno dla nazwy użytkownika i drugie dla hasła.
+   - Po naciśnięciu przycisku "Loguj" formularz jest wysyłany do backendu.
+   - Na serwerze sprawdzane są dane logowania. Jeśli są poprawne, użytkownik jest zalogowany, a aplikacja przekierowuje go na stronę główną (`/main`).
+   - Jeśli dane są błędne, użytkownik otrzymuje komunikat o niepoprawnych danych logowania.
+
+2. **Rejestracja**:
+   - Jeśli użytkownik nie ma jeszcze konta, może kliknąć przycisk „Zarejestruj się”, który przekierowuje go do formularza rejestracji.
+
+## Interfejs użytkownika
+- **Pola wejściowe**:
+  - Nazwa użytkownika (typ tekstowy)
+  - Hasło (typ hasło)
+- **Przyciski**:
+  - "Loguj" - Przesyła dane logowania.
+  - "Zarejestruj się" - Przekierowuje na stronę rejestracji.
+
+## Proces logowania
+1. Użytkownik wprowadza nazwę użytkownika i hasło.
+2. Klikając "Loguj", dane są wysyłane do backendu.
+3. Jeśli dane są poprawne, użytkownik jest przekierowywany na stronę główną aplikacji (`/main`).
+4. W przypadku błędnych danych, wyświetlany jest komunikat o błędzie.
+   
+# plik RegisterForm.js
+
+## Cel
+Formularz rejestracji pozwala nowym użytkownikom zarejestrować się w aplikacji, tworząc konto z nazwą użytkownika i hasłem. Po pomyślnym zarejestrowaniu użytkownik otrzymuje komunikat o sukcesie.
+
+## Składniki komponentu
+- **Stan (State)**:
+  - `username`: Przechowuje nazwę użytkownika wprowadzaną przez użytkownika.
+  - `password`: Przechowuje hasło wprowadzone przez użytkownika.
+
+- **Hooki**:
+  - `useState`: Używane do zarządzania stanem dla nazwy użytkownika i hasła.
+
+## Logika
+1. **Obsługa formularza**:
+   - Formularz zawiera dwa pola wejściowe: jedno dla nazwy użytkownika i drugie dla hasła.
+   - Po naciśnięciu przycisku "Rejestruj" dane są wysyłane na backend, aby zarejestrować nowego użytkownika.
+   - Jeśli dane logowania są poprawne, użytkownik zostaje zarejestrowany i wyświetlany jest komunikat o pomyślnym zakończeniu rejestracji.
+   - Jeśli wystąpią błędy przy rejestracji, użytkownik otrzymuje komunikat o błędzie.
+
+2. **Przekierowanie do logowania**:
+   - Jeśli użytkownik już ma konto, może kliknąć przycisk „Zaloguj się do portalu”, który przekierowuje go na stronę logowania.
+
+## Interfejs użytkownika
+- **Pola wejściowe**:
+  - Nazwa użytkownika (typ tekstowy)
+  - Hasło (typ hasło)
+- **Przyciski**:
+  - "Rejestruj" - Przesyła dane rejestracyjne do backendu.
+  - "Zaloguj się do portalu" - Przekierowuje na stronę logowania.
+
+## Proces rejestracji
+1. Użytkownik wprowadza nazwę użytkownika i hasło.
+2. Klikając "Rejestruj", dane są wysyłane do backendu w celu rejestracji nowego użytkownika.
+3. Jeśli dane są poprawne, użytkownik otrzymuje komunikat o pomyślnym zarejestrowaniu konta.
+4. W przypadku błędów, użytkownik otrzymuje komunikat o nieudanej rejestracji.
+
