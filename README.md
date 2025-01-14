@@ -1,4 +1,4 @@
-by Oliwier Łosoń
+by Oliwier Ł
 
 # Podczas pisania użyty został formatter kodu prietier
 
