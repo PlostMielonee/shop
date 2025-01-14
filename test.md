@@ -1,1 +1,0 @@
-`npm install express cors bcrypt mysql2 express`
