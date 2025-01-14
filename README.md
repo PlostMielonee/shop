@@ -8,12 +8,17 @@ Aby uruchomić aplikację, musisz mieć zainstalowane:
 
 - [Node.js](https://nodejs.org/) (wraz z npm)
 - [MySQL](https://www.mysql.com/)
+- [XAMPP](https://www.apachefriends.org/pl/index.htm)
 
-## Krok 1: Uruchomienie backendu
+## Krok 1: Uruchomienie serwera
+1.Odpal xampp i uruchom MySQL
+2.Stwórz baze danych i zaimportój plik szkolny_sklepik.sql
 
-1. Sklonuj repozytorium lub pobierz pliki projektu na swój komputer.
-2. Przejdź do folderu, w którym znajduje się backend (plik `server.js`).
-3. Zainstaluj zależności, uruchamiając polecenie:
+## Krok 2: Uruchomienie plików w folderze 
+
+
+1. Przejdź do folderu, w którym znajduje się backend (plik `server.js`).
+2. Zainstaluj zależności, uruchamiając polecenie:
 
    ``npm install express cors bcrypt mysql2 react-router-dom @tsparticles/all @tsparticles/react react-icons``
 
@@ -26,6 +31,11 @@ Aby uruchomić aplikację, musisz mieć zainstalowane:
       * react-router do przekierowywania
       * tsparticles do partikli na tło
       * ract-icons biblioteka z ikonami 
+
+3. przejdz w konsoli do folderu src i uruchom plik server.js za pomocą ``node server.js``
+4. uruchom react za pomocą npm start (strona powinna odpalić się na http://localhost:3000/ i zrobić automatyczne przekierowanie na http://localhost:3000/login (wystarczy dać mu chwilke by zaczaił )
+
+
 
 # Dokumentacja pliku ProductList.js 
 
@@ -52,7 +62,7 @@ Komponent `ProductList` odpowiada za wyświetlanie listy produktów, dodawanie/u
 ## Funkcjonalności
 
 ### 1. Wyświetlanie produktów
-Produkty są pobierane z backendu i wyświetlane w formie kart. Każdy produkt zawiera:
+Produkty są pobierane  i wyświetlane w formie kart. Każdy produkt zawiera:
 - nazwę,
 - cenę,
 - typ jedzenia,
@@ -60,7 +70,7 @@ Produkty są pobierane z backendu i wyświetlane w formie kart. Każdy produkt z
 - przycisk do dodania do koszyka.
 
 ### 2. Sortowanie produktów
-Produkty można sortować po:
+Produkty można sortować a następnie wyświetlić po:
 - **Nazwie** (alfabetycznie),
 - **Cenie** (rosnąco),
 - **Typie jedzenia** (alfabetycznie).
@@ -70,10 +80,10 @@ Koszyk wyświetla produkty dodane przez użytkownika. Użytkownik może:
 - Dodać produkty do koszyka,
 - Usunąć produkty z koszyka,
 - Sprawdzić łączną cenę w koszyku,
-- Dokonać zakupu.
+- 'Dokonać zakupu'.
 
 ### 4. Zamówienie i historia
 Po kliknięciu przycisku "Zamów":
-- Jeśli koszyk jest pusty, wyświetlane jest powiadomienie,
-- Jeśli koszyk zawiera produkty, jest zapisany w historii zakupów, a koszyk zostaje opróżniony.
+- Jeśli koszyk jest pusty, wyświetlane jest powiadomienie że koszyk jest pusty,
+- Jeśli koszyk zawiera produktya zostanie coś kupione to zostaje  to zapisane  w historii zakupów, a koszyk zostaje opróżniony.
 
