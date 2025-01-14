@@ -4,28 +4,36 @@ import ProductList from './components/ProductList';
 import Login from './components/LoginForm';
 import RegisterForm from './components/RegisterForm';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import ParticlesComponent from './components/particles';
 import './css/loginStyles.css';
+import './css/particles.css';
+
+
+
 function App() {
   const [user, setUser] = useState(null); // czy użytkownik jest zalogowany [stan akutalny]
 
   return (
     <Router>
-      <Routes>
-        {/* Przekierowanie do logowania, jeśli użytkownik nie jest zalogowany */}
-        <Route path="/" element={<Navigate to="/login" />} />  {/* Domyślna strona logowania */}
+    <div>
+       
+        <ParticlesComponent id='particles'/>
 
-        {/* Ścieżka do strony głównej */}
-        <Route
-          path="/main"
-          element={user ? <ProductList user={user} /> : <Navigate to="/login" />}
-        />
-        
-        {/* Strona logowania */}
-        <Route path="/login" element={<Login setUser={setUser} />} />
-        
-        {/* Strona rejestracji */}
-        <Route path="/register" element={<RegisterForm />} />
-      </Routes>
+        {/* Główna zawartość */}
+
+
+        <div className="main-app-content">
+          <Routes>
+            <Route path="/" element={<Navigate to="/login" />} />
+            <Route
+              path="/main"
+              element={user ? <ProductList user={user} /> : <Navigate to="/login" />}
+            />
+            <Route path="/login" element={<Login setUser={setUser} />} />
+            <Route path="/register" element={<RegisterForm />} />
+          </Routes>
+        </div>
+      </div>
     </Router>
   );
 }

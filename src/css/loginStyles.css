@@ -1,43 +1,135 @@
-body{
-    height: 100vh;
-    margin: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,401;1,401&display=swap");
+
+
+
+body {
+  height: 100vh;
+  width: 100%;
+  margin: 0;
+  z-index: 1;
+  color: white;
+  font-family: "Robot Mono";
+  box-sizing: border-box;
 }
 
-
-
-.login-form, .register-form {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.main-app-content {
+  height: 100vh;
 }
 
-.login-title, .register-title{
-    padding-bottom: 1em;   
+.main {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.input{
-    background-color: 0;
-    border-radius: 10px;
-    border-color: white;
-    width: 20em;
-    height: 2.5em;
+.login-form,
+.register-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.submit-button{
-    background-color: #ffffffa7;
-    border-radius: 10px;
-    border-color: white;
-
+.login-title,
+.register-title {
+  padding-bottom: 1em;
 }
 
-.form{
-    display: flex;
-    flex-direction: column;
-    gap: 1em;
-    margin-bottom: 1em;
+.input {
+  transition: 1s;
 }
+
+.input:hover {
+  box-shadow: 0 0 25px white;
+}
+
+.input {
+  background-color: 0;
+  border-radius: 10px;
+  border-color: white;
+  border-width: 3px;
+  width: 20em;
+  height: 2.5em;
+  background-color: rgba(240, 248, 255, 0);
+  color: white;
+}
+
+.submit-button {
+  background-color: #ffffff00;
+  border-radius: 10px;
+  border-color: white;
+  color: rgb(255, 255, 255);
+  pad: 0.5px;
+  transition: 0.5s;
+  text-transform: capitalize;
+  padding: 0.5em ;
+}
+
+.submit-button:hover {
+  box-shadow: 0 0 15px rgb(255, 255, 255);
+}
+.input:focus {
+  box-shadow: 0 0 25px rgb(175, 152, 230);
+}
+
+.buy-button{
+  transition: 0.3s;
+}
+.remove-button{
+  color: white;
+  padding: 0.3em;
+  transition: 0.2;
+}
+.remove-button:hover{
+  box-shadow: 0 0 25px rgb(184, 99, 99);
+
+}
+.order-button{
+  transform: 0.5s;
+  padding: 0.5em;
+  color:white;
+}
+.buy-button:hover,.order-button:hover{
+  box-shadow: 0 0 25px rgb(175, 152, 230);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  margin-bottom: 1em;
+  align-items: center;
+}
+
+span{
+    font-weight: bolder;
+}
+
+.label{
+  background-color: #ffffff00;
+  color:white;
+}
+
+.card{
+ 
+  background: linear-gradient(180deg, rgba(203, 200, 255, 0.212) 0%, rgba(30,30,36,0) 100%); 
+  color: white;
+  transform: 1.6s;
+   background-color: rgba(255, 255, 255, 0);
+}
+
+.card:hover{
+  background: linear-gradient(180deg, rgba(203, 200, 255, 0.521) 0%, rgba(30,30,36,0) 100%); 
+  box-shadow: 20 20 45px rgb(175, 152, 230);
+}
+
+.label{
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.react-shop-icon{
+  margin:  0.3em;
+  color: rgb(219, 167, 243);
+}
+

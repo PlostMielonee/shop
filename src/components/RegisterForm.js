@@ -14,6 +14,13 @@ function RegisterForm() {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ username, password }),
     });
+
+    if (e.target.value == null) {
+      console.log("Wysłana wartość jest pusta");
+      alert("Nic nie wpisano");
+    } else {
+      console.log("Wysłano poprawną wartość");
+    }
     if (response.ok) {
       alert("Zarejestrowano pomyślnie!");
     } else {
@@ -22,6 +29,8 @@ function RegisterForm() {
   };
 
   return (
+    <div className="main position-relative">
+
     <div className="register-form">
       <h2 className="register-title">ZAREJESTRUJ SIĘ </h2>
       <form className="form" onSubmit={handleSubmit}>
@@ -31,23 +40,27 @@ function RegisterForm() {
           placeholder="Nazwa użytkownika"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
-        />
+          />
+
         <input
           className="input from-label"
           type="password"
           placeholder="Hasło"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
-        />
+          />
         <button className="submit-button" type="submit">
-          Zarejestruj
+          Rejestruj
         </button>
-
+        <Link to="/login">
+          <button className="submit-button" type="button">
+            Zaloguj się do portalu
+          </button>
+        </Link>
       </form>
-        <p>
-          Masz już konto? <Link to="/login">To sie zaloguj!!</Link>!
-        </p>
+      <p>Masz już konto? To sie zaloguj!</p>
     </div>
+          </div>
   );
 }
 
