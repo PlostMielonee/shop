@@ -4,7 +4,7 @@ import ProductList from './components/ProductList';
 import Login from './components/LoginForm';
 import RegisterForm from './components/RegisterForm';
 import 'bootstrap/dist/css/bootstrap.min.css';
-
+import './css/loginStyles.css';
 function App() {
   const [user, setUser] = useState(null); // czy użytkownik jest zalogowany [stan akutalny]
 

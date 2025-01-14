@@ -1,0 +1,43 @@
+body{
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+
+
+.login-form, .register-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-title, .register-title{
+    padding-bottom: 1em;   
+}
+
+.input{
+    background-color: 0;
+    border-radius: 10px;
+    border-color: white;
+    width: 20em;
+    height: 2.5em;
+}
+
+.submit-button{
+    background-color: #ffffffa7;
+    border-radius: 10px;
+    border-color: white;
+
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    margin-bottom: 1em;
+}
