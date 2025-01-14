@@ -15,7 +15,7 @@ function RegisterForm() {
       body: JSON.stringify({ username, password }),
     });
 
-    if (e.target.value == null) {
+    if (e.target.value == 0) {
       console.log("Wysłana wartość jest pusta");
       alert("Nic nie wpisano");
     } else {
@@ -40,6 +40,7 @@ function RegisterForm() {
           placeholder="Nazwa użytkownika"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
+          required
           />
 
         <input
@@ -48,6 +49,7 @@ function RegisterForm() {
           placeholder="Hasło"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
+          required
           />
         <button className="submit-button" type="submit">
           Rejestruj
